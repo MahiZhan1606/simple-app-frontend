@@ -25,7 +25,7 @@ function RegisterScreen() {
 
 
       try {
-        const result = (await axios.post('http://localhost:3001/register', user)).data;
+        const result = (await axios.post('https://simple-app-mahizhan-backend.onrender.com/register', user)).data;
 
         setName('');
         setEmail('');
@@ -40,7 +40,7 @@ function RegisterScreen() {
         console.log(error);
       }
     }
-    else{
+    else {
       alert('Confirm password does not match');
     }
   }
@@ -51,20 +51,20 @@ function RegisterScreen() {
 
       {success && <h1 style={{ color: "green" }}>Successfully Register</h1>}
 
-      <input type='text' className='form-control' placeholder='enter name' value={name} 
-      onChange={(e) => setName(e.target.value)} />
+      <input type='text' className='form-control' placeholder='enter name' value={name}
+        onChange={(e) => setName(e.target.value)} />
 
-      <input type='email' className='form-control' placeholder='enter email' value={email} 
-      onChange={(e) => setEmail(e.target.value)} />
+      <input type='email' className='form-control' placeholder='enter email' value={email}
+        onChange={(e) => setEmail(e.target.value)} />
 
       <input type='text' className='form-control' placeholder='enter phone number' value={phone}
-      onChange={(e) => setPhone(e.target.value)} />
+        onChange={(e) => setPhone(e.target.value)} />
 
-      <input type='text' className='form-control' placeholder='enter password' value={password} 
-      onChange={(e) => setPassword(e.target.value)} />
+      <input type='text' className='form-control' placeholder='enter password' value={password}
+        onChange={(e) => setPassword(e.target.value)} />
 
-      <input type='text' className='form-control' placeholder='enter confirm password' value={cPassword} 
-      onChange={(e) => setConfirmPass(e.target.value)} />
+      <input type='text' className='form-control' placeholder='enter confirm password' value={cPassword}
+        onChange={(e) => setConfirmPass(e.target.value)} />
 
       <button className='reg-btn' onClick={register}>Register</button>
     </div>

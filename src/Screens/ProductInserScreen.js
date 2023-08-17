@@ -27,7 +27,7 @@ function ProductInserScreen() {
       const token = localStorage.getItem('token');
 
       // Include the token in the request headers
-      const response = await axios.post('http://localhost:3001/insert', newProduct, {
+      const response = await axios.post('https://simple-app-mahizhan-backend.onrender.com/insert', newProduct, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -41,7 +41,7 @@ function ProductInserScreen() {
       setProductRating("");
       setProductOffers("");
       setProductRam("");
-      
+
     } catch (error) {
       console.log(error);
     }

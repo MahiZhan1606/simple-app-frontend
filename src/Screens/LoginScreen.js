@@ -14,7 +14,8 @@ function LoginScreen() {
       password,
     };
     try {
-      const result = (await axios.post("http://localhost:3001/login", user)).data;
+      // const result = (await axios.post("http://localhost:3001/login", user)).data;
+      const result = (await axios.post("https://simple-app-mahizhan-backend.onrender.com/login", user)).data;
       localStorage.setItem("token", result.token);
       localStorage.setItem("currentUser", JSON.stringify(result));
       localStorage.setItem("userName", result.name);

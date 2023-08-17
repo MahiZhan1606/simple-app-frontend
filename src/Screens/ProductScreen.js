@@ -13,7 +13,7 @@ function ProductScreen() {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const result = await axios.get('http://localhost:3001/gets', {
+      const result = await axios.get('https://simple-app-mahizhan-backend.onrender.com/gets', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ function ProductScreen() {
   const deleteProduct = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:3001/delete/${id}`, {
+      await axios.delete(`https://simple-app-mahizhan-backend.onrender.com/delete/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -51,7 +51,7 @@ function ProductScreen() {
       const editedProduct = editedProducts[index];
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:3001/update/${editedProduct._id}`,
+        `https://simple-app-mahizhan-backend.onrender.com/update/${editedProduct._id}`,
         editedProduct,
         {
           headers: {
@@ -162,11 +162,11 @@ function ProductScreen() {
                 ) : (
                   <button onClick={() => handleEdit(index)}>Edit</button>
                 )}</td>
-                <td data-label="Delete">
-                  <button onClick={() => deleteProduct(product._id)}>
+              <td data-label="Delete">
+                <button onClick={() => deleteProduct(product._id)}>
                   Delete
                 </button>
-                </td>
+              </td>
             </tr>
           ))}
         </tbody>
